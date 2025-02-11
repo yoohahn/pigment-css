@@ -1,5 +1,5 @@
 import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
+import react from '@vitejs/plugin-react-swc';
 import { pigment, extendTheme } from '@pigment-css/vite-plugin';
 
 // To learn more about theming, visit https://github.com/mui/pigment-css/blob/master/README.md#theming
@@ -22,6 +22,9 @@ const theme = extendTheme({
       },
     },
   },
+  getSelector: (colorScheme: string) => {
+    return `.${colorScheme}`;
+  },
 });
 
 // https://vite.dev/config/
@@ -32,4 +35,7 @@ export default defineConfig({
     }),
     react(),
   ],
+  optimizeDeps: {
+    include: ['react-is', 'prop-types'],
+  },
 });

@@ -9,7 +9,7 @@
 !.vscode/extensions.json
 *.log
 *.tsbuildinfo
-/.eslintcache
+.eslintcache
 /.nyc_output
 /benchmark/**/dist
 /coverage
@@ -30,3 +30,4 @@ docs/public/static/blog/feed/*
 # vale downloaded config
 .github/styles/
 .nx/cache
+packages/**/LICENSE
